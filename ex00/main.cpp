@@ -19,34 +19,35 @@ int main( int argc, char **argv ) {
 	char *end = NULL;
 	double dbl = std::strtod( argv[1], &end );
 
+	//한글자일때 처리
 	if ( *end != 0 && strlen( argv[1] ) == 1 ) {
 		dbl = static_cast<double>( *argv[1] );
 		print_char( dbl );
 		print_num( dbl );
+		//한글자가 아닐때
 	} else {
+		// strtod 반환 포인터가 NULL 이 아닐때, f가 아니거나 글자가 더
+		// 있다는것은 표현안된다.
 		if ( *end != 0 && ( strlen( end ) != 1 || *end != 'f' ) ) {
 			std::cout << "char: impossible" << std::endl;
 			std::cout << "int: impossible" << std::endl;
 			std::cout << "float: nanf" << std::endl;
 			std::cout << "double: nan" << std::endl;
 		} else {
+			// 한글자가 아닌 숫자를 더플로 전달
 			print_char( dbl );
+			// nan 인지 판단
 			if ( isnan( dbl ) ) {
 				std::cout << "int: impossible" << std::endl;
 				std::cout << "float: nanf" << std::endl;
 				std::cout << "double: nan" << std::endl;
-			} else
+			} else  // 숫자를 찍음
 				print_num( dbl );
 		}
 	}
 	return EXIT_SUCCESS;
 }
 
-// static bool is_prinable( int c ) {
-// 	if ( c < ASCII_SP || c == ASCII_END )
-// 		return false;
-// 	return true;
-// }
 static void print_num( double dbl ) {
 	int intTmp = static_cast<int>( dbl );
 	float floatTmp = static_cast<float>( dbl );
