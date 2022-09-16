@@ -18,6 +18,7 @@ int main( int argc, char **argv ) {
 	}
 	char *end = NULL;
 	double dbl = std::strtod( argv[1], &end );
+	std::cout << "len : " << strlen( end ) << std::endl;
 
 	//한글자일때 처리
 	if ( *end != 0 && strlen( argv[1] ) == 1 ) {
