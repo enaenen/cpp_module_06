@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include <limits>
+#include <climits>
 #include <cstdlib>
 #include <cstring>
 #include <cmath>
