@@ -3,6 +3,8 @@
 #include <limits>
 #include <cstdlib>
 #include <cstring>
+#include <cmath>
+#include <limits>
 
 #define ASCII_END 127
 #define ASCII_SP 32
