@@ -61,7 +61,7 @@ static void print_num( double dbl ) {
 		std::cout << "int: " << INT_MIN << std::endl;
 	else
 		std::cout << "int: " << intTmp << std::endl;
-	if ( static_cast<float>( dbl ) == floatTmp )
+	if ( static_cast<float>( intTmp ) == floatTmp )
 		std::cout << "float: " << floatTmp << ".0f" << std::endl;
 	else
 		std::cout << "float: "
