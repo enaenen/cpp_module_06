@@ -6,8 +6,7 @@
 #include <cstdlib>
 #include <sys/time.h>
 
-Base::~Base( void ) {
-}
+Base::~Base( void ) {}
 static void testing( int caseNumber ) {
 	std::cout << "==========TEST " << caseNumber << std::endl;
 	Base *randomBase;
@@ -49,11 +48,11 @@ Base *generate( void ) {
 
 void identify( Base *p ) {
 	if ( dynamic_cast<A *>( p ) )
-		std::cout << "*p is << A >>  Class " << std::endl;
+		std::cout << "*p is << A >> Class " << std::endl;
 	else if ( dynamic_cast<B *>( p ) )
-		std::cout << "*p is << B >>  Class " << std::endl;
+		std::cout << "*p is << B >> Class " << std::endl;
 	else if ( dynamic_cast<C *>( p ) )
-		std::cout << "*p is << C >>  Class " << std::endl;
+		std::cout << "*p is << C >> Class " << std::endl;
 	else
 		std::cout << "NOT A, B, C Class" << std::endl;
 }
